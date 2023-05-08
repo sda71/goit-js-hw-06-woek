@@ -15,18 +15,48 @@ const refs = {
     valueEl: document.querySelector('#value')
 }
 
-
 let counterValue = 0;
-refs.btnDecrement.addEventListener('click', ()=> {
-    counterValue -= 1;
+const  counter = (direction) => {
+    counterValue += direction;
     refs.valueEl.innerHTML = counterValue;
-
-} );
-refs.btnIncrement.addEventListener('click', ()=> {
-    counterValue += 1;
-    refs.valueEl.innerHTML = counterValue;
-  } );
+}
+refs.btnDecrement.addEventListener('click', (direction) => {counter(-1);});
+refs.btnIncrement.addEventListener('click', (direction) => {counter(+1);});
 
 
+// let counterValue = 0;
+// refs.btnDecrement.addEventListener('click', ()=> {
+//     counterValue -= 1;
+//     refs.valueEl.innerHTML = counterValue;
+
+// } );
+// refs.btnIncrement.addEventListener('click', ()=> {
+//     counterValue += 1;
+//     refs.valueEl.innerHTML = counterValue;
+//   } );
 
 
+
+// const refs = {
+//     counterEl: document.querySelector('#counter'),
+//     btnDecrement: document.querySelector('[data-action="decrement"]'),
+//     btnIncrement: document.querySelector('[data-action="increment"]'),
+//     valueEl: document.querySelector('#value')
+//   };
+  
+//   let counterValue = 0;
+  
+//   const updateCounter = (direction) => {
+//     counterValue += direction;
+//     console.log(counterValue);
+//     refs.valueEl.innerHTML = counterValue;
+//   };
+  
+//   refs.btnDecrement.addEventListener('click', () => {
+//     updateCounter(-1);
+//   });
+  
+//   refs.btnIncrement.addEventListener('click', () => {
+//     updateCounter(1);
+//   });
+  
